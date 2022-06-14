@@ -1,0 +1,31 @@
+@import "../../shared/styles/styles.scss";
+.filter-wrapper {
+    border: 1px solid black;
+    margin-left: 25px;
+
+    @media (max-width: 500px) {
+        margin-left: 0;
+    }
+
+    .filter-title {
+        background-color: $footer-header;
+        color: #fff;
+        padding: 5px 0px 5px 8px;
+    }
+    .filter-body {
+        margin: 10px 10px;
+        p {
+            padding: 10px 0;
+            font-weight: 600;
+        }
+        .filter-size,
+        .filter-order {
+            select {
+                width: 100%;
+                padding: 5px;
+                font-size: 15px;
+                font-weight: 600;
+            }
+        }
+    }
+}
