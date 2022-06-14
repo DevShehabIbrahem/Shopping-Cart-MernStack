@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap");
+@import "../../shared/styles/styles.scss";
+
+$fontfamily: "Tiro Devanagari Sanskrit", serif;
+@import "../../shared/styles/styles.scss";
+
+header {
+    background-color: $footer-header;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8px 20px;
+        @media (min-width: 1900px) {
+            max-width: 1800px;
+        }
+
+        .header_ele {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .basket {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+
+                @media (min-width: 1900px) {
+                    font-size: 25px;
+                }
+
+                div:nth-child(2) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-left: 30px;
+
+                    & > p {
+                        font-family: $fontfamily;
+                        font-size: 15px;
+
+                        @media (min-width: 500px) and(max-width:740px) {
+                            display: none;
+                        }
+                        @media (min-width: 1900px) {
+                            font-size: 30px;
+                        }
+                    }
+
+                    .basket_hours {
+                        padding-top: 5px;
+                        color: #b1aeae;
+                    }
+                }
+                div:nth-child(1) {
+                    display: flex;
+                    align-items: center;
+
+                    .basket_bold {
+                        font-weight: 600;
+                    }
+                    & > p {
+                        font-family: $fontfamily;
+                        font-size: 15px;
+
+                        @media (min-width: 500px) and(max-width:740px) {
+                            display: none;
+                        }
+                        @media (min-width: 1900px) {
+                            font-size: 30px;
+                        }
+                    }
+
+                    .basket_color {
+                        color: $fontColorRed;
+                        font-weight: 600;
+                        margin-right: 5px;
+                    }
+                }
+
+                .icons {
+                    display: flex;
+                    align-items: center;
+
+                    & > div {
+                        margin-left: 20px;
+                        font-size: 30px;
+                        cursor: pointer;
+                        color: #b1aeae;
+                        @media (min-width: 1900px) {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            .logo {
+                width: 40%;
+
+                img {
+                    width: 60px;
+                    @media (min-width: 1900px) {
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @media  (min-width:500px) {
+//     .ul_wrapper ul >li {
+//         display: inline-block;
+//         width:50%;
+//     }
+// }
+
+// @media  (min-width:600px) {
+//     .ul_wrapper ul >li {
+//         display: inline-block;
+//         width:33%;
+//     }
+// }
+
+// @media  (min-width:740px) {
+
+//     .ul_wrapper ul >li {
+//         display: inline-block;
+//         width:21.5%;
+//         margin-right: 17px;
+
+//     }
+// }
