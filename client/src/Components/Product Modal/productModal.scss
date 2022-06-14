@@ -1,0 +1,47 @@
+.wrapper-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+
+    .layout-modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        width: 25%;
+        padding-top: 72px;
+        
+        .title {
+            padding-bottom: 15px;
+        }
+        .dec {
+            text-align: center;
+            line-height: 25px;
+            font-size: 14px;
+        }
+    }
+    .image-modal {
+        width: 310px;
+        height: 250px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.close-modal {
+    border: 1px solid;
+    padding: 0em 0.3em;
+    border-radius: 20px;
+    font-size: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+.ReactModal__Overlay{
+    z-index: 100 !important;
+}
