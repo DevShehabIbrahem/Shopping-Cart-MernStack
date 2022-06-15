@@ -1,24 +1,93 @@
-.cart-wrapper{
+.cart-wrapper {
     width: 70%;
     margin: 15px auto;
 
-    .cart-items{
+    .cart-items {
         padding: 5px;
-        display:flex;
+        display: flex;
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid #000;
+        padding: 20px 0px;
+        button {
+            padding: 6px;
 
+            font-size: 14px;
+            background: #243a73;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
 
-        .cart-fed{
-            display:flex;
+        .cart-fed {
+            display: flex;
             justify-content: space-between;
             align-items: center;
-            img{
+            .cart-info{
+                font-size: 15px;
+            }
+            img {
                 width: 80px;
                 height: 80px;
                 margin-right: 13px;
             }
-        }   
+        }
+    }
+    .cart-checkout {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        button {
+            padding: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #243a73;
+            border: none;
+            color: #fff;
+        }
+        .price {
+            font-weight: 800;
+            font-size: 28px;
+        }
+    }
+}
+.check-form {
+    background-color: #ddd;
+    width: 100%;
+    position: relative;
+
+    .close-modal {
+        border: 1px solid;
+        padding: 0em 0.3em;
+        border-radius: 20px;
+        font-size: 30px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+    }
+    form {
+        width: 55%;
+        margin: 0 auto;
+        padding: 50px 0;
+
+        label {
+            font-weight: 800;
+            font-size: 20px;
+        }
+        input {
+            padding: 5px;
+            margin: 15px 0;
+            width: 100%;
+        }
+        button {
+            padding: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #243a73;
+            border: none;
+            color: #fff;
+            width: 100%;
+        }
     }
 }

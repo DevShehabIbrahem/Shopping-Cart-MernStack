@@ -4,11 +4,13 @@ import data from "../../data.json";
 import Cart from "../Cart/Cart";
 import Filter from "../Filter/Filter";
 import Proucts from "../Proucts/Proucts";
+
 const Main = () => {
   const [products, setProducts] = useState(data);
   const [fillterSize, setFillterSize] = useState([]);
 
   const CartProducts = localStorage.getItem("CartItems");
+  console.log(CartProducts);
   const [cartItems, setCartItems] = useState(JSON.parse(CartProducts));
 
   const [size, setSize] = useState("ALL");
@@ -18,6 +20,7 @@ const Main = () => {
   const AddToCart = (product) => {
     //check if product is exsit
     const productIsExist = cartItems.find((p) => p.id === product.id); // =>obj
+
     //incress The qty
     const incressQTY = { ...productIsExist, qty: productIsExist?.qty + 1 };
 

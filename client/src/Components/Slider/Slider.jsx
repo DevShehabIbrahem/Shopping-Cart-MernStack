@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import imge3 from "../../asset/bg.jpg";
 import imge from "../../asset/bg3.jpg";
 import imge2 from "../../asset/bg2.jpg";
-import imge4 from "../../asset/bg4.jpg";
 
 import banner4 from "../../asset/slideImages/Landing-Page-Hero-1.png";
 
@@ -13,7 +12,7 @@ import "swiper/css/effect-fade";
 import { Navigation, EffectFade, Autoplay } from "swiper";
 
 const Slider = () => {
-  const image = [imge3, imge2, imge, imge4, banner4];
+  const image = [imge3, imge2, imge, banner4];
 
   return (
     <div className="slider">
