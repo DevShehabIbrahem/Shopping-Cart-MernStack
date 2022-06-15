@@ -1,0 +1,28 @@
+.filter-wrapper {
+  border: 1px solid black;
+  margin-left: 25px;
+}
+@media (max-width: 500px) {
+  .filter-wrapper {
+    margin-left: 0;
+  }
+}
+.filter-wrapper .filter-title {
+  background-color: #171717;
+  color: #fff;
+  padding: 5px 0px 5px 8px;
+}
+.filter-wrapper .filter-body {
+  margin: 10px 10px;
+}
+.filter-wrapper .filter-body p {
+  padding: 10px 0;
+  font-weight: 600;
+}
+.filter-wrapper .filter-body .filter-size select,
+.filter-wrapper .filter-body .filter-order select {
+  width: 100%;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}

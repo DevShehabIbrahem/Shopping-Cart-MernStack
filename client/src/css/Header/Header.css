@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap");
+header {
+  background-color: #171717;
+}
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px;
+}
+@media (min-width: 1900px) {
+  header .container {
+    max-width: 1800px;
+  }
+}
+header .container .header_ele {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .header_ele .basket {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (min-width: 1900px) {
+  header .container .header_ele .basket {
+    font-size: 25px;
+  }
+}
+header .container .header_ele .basket div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 30px;
+}
+header .container .header_ele .basket div:nth-child(2) > p {
+  font-family: "Tiro Devanagari Sanskrit", serif;
+  font-size: 15px;
+}
+@media (min-width: 500px) and (max-width: 740px) {
+  header .container .header_ele .basket div:nth-child(2) > p {
+    display: none;
+  }
+}
+@media (min-width: 1900px) {
+  header .container .header_ele .basket div:nth-child(2) > p {
+    font-size: 30px;
+  }
+}
+header .container .header_ele .basket div:nth-child(2) .basket_hours {
+  padding-top: 5px;
+  color: #b1aeae;
+}
+header .container .header_ele .basket div:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+header .container .header_ele .basket div:nth-child(1) .basket_bold {
+  font-weight: 600;
+}
+header .container .header_ele .basket div:nth-child(1) > p {
+  font-family: "Tiro Devanagari Sanskrit", serif;
+  font-size: 15px;
+}
+@media (min-width: 500px) and (max-width: 740px) {
+  header .container .header_ele .basket div:nth-child(1) > p {
+    display: none;
+  }
+}
+@media (min-width: 1900px) {
+  header .container .header_ele .basket div:nth-child(1) > p {
+    font-size: 30px;
+  }
+}
+header .container .header_ele .basket div:nth-child(1) .basket_color {
+  color: #ac0808;
+  font-weight: 600;
+  margin-right: 5px;
+}
+header .container .header_ele .basket .icons {
+  display: flex;
+  align-items: center;
+}
+header .container .header_ele .basket .icons > div {
+  margin-left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #b1aeae;
+}
+@media (min-width: 1900px) {
+  header .container .header_ele .basket .icons > div {
+    font-size: 50px;
+  }
+}
+header .container .header_ele .logo {
+  width: 40%;
+}
+header .container .header_ele .logo img {
+  width: 60px;
+}
+@media (min-width: 1900px) {
+  header .container .header_ele .logo img {
+    width: 100px;
+  }
+}
