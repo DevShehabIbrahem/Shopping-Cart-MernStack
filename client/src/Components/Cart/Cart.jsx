@@ -5,7 +5,6 @@ import CheckoutCart from "../checkoutCart/CheckoutCart";
 const Cart = ({ cartItems, DeleteItem }) => {
   const [show, setShow] = useState(false);
   const [values, setValues] = useState({ name: "", email: "" });
-  console.log("🚀 ~ file: Cart.jsx ~ line 7 ~ Cart ~ values", values);
 
   //culc the Total price
   const TotalPrice = cartItems.reduce((acc, currnt) => acc + currnt.price, 0);

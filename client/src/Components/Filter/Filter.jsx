@@ -1,14 +1,13 @@
-import React from "react";
 import "../../css/Filter/Filter.css";
 import { words } from "../../words";
-
 const Filter = ({
   Proucts,
   handleSize,
   handleorder,
+
   order,
+  Bysize,
   size,
-  fillterSize,
 }) => {
   return (
     <div className="filter-wrapper">
@@ -18,8 +17,8 @@ const Filter = ({
 
       <div className="filter-body">
         <p>Number of Proucts: {Proucts.length} products</p>
-        <p>Number of Proucts by Size: {fillterSize.length}</p>
-        <p>Number of Proucts by Order: {order.length}</p>
+        <p>Number of Proucts By Size: {Bysize.length} products</p>
+        <p>Number of Proucts By Size: {Bysize.length} products</p>
 
         <div className="filter-size">
           <p>Filter</p>
@@ -35,11 +34,8 @@ const Filter = ({
 
         <div className="filter-order">
           <p>Order</p>
-          <select
-            value={order}
-            onChange={handleorder}
-            disabled={fillterSize.length}
-          >
+
+          <select value={order} onChange={handleorder}>
             {words.order.map((item) => (
               <option value={item} key={item}>
                 {item}

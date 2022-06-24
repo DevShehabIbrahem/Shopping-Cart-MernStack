@@ -34,15 +34,15 @@
         "sizes":["Xxl","Xl"]
 
     },
-    {
-        "id":"id5",
-        "title":"HyperX Cloud Stinger",
-        "imageurl":"/images/products/JBL-Endurance-Peak-II-Gianis-Product-1.jpg",
-        "dec":"Onikuma K10 RGB LED Light 3.5mm Surround Gaming Headset - Black",
-        "price":80,
-        "sizes":["Lg","Sm"]
+        {
+            "id":"id5",
+            "title":"HyperX Cloud Stinger",
+            "imageurl":"/images/products/JBL-Endurance-Peak-II-Gianis-Product-1.jpg",
+            "dec":"Onikuma K10 RGB LED Light 3.5mm Surround Gaming Headset - Black",
+            "price":80,
+            "sizes":["Lg","Sm"]
 
-    },
+        },
     {
         "id":"id6",
         "title":"Sades SA818 Stereo",
