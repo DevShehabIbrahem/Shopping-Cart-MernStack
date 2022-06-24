@@ -1,20 +1,41 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "../../css/Main/Main.css";
 import data from "../../data.json";
+
 import Cart from "../Cart/Cart";
 import Filter from "../Filter/Filter";
 import Proucts from "../Proucts/Proucts";
+import {
+  fetchProducts,
+  shopping,
+  filterbySize,
+  filtersize,
+  filterSort,
+  Allproducts,
+  orderFiltring,
+  filterSizeByOrder,
+} from "../../Redux/Slice/productsSilce";
 
+import axios from "../../Api/axios";
 const Main = () => {
-  const [products, setProducts] = useState(data);
-  const [fillterSize, setFillterSize] = useState([]);
+  const products = useSelector(shopping);
+  console.log("🚀 ~ file: Main.jsx ~ line 21 ~ Main ~ products", products);
+  const Bysize = useSelector(filtersize);
+
+  console.log("🚀 ~ file: Main.jsx ~ line 23 ~ Main ~ Byorder", Bysize);
+  const dispatch = useDispatch();
 
   const CartProducts = localStorage.getItem("CartItems");
-  console.log(CartProducts);
   const [cartItems, setCartItems] = useState(JSON.parse(CartProducts));
 
   const [size, setSize] = useState("ALL");
   const [order, setOrder] = useState("");
+  console.log("🚀 ~ file: Main.jsx ~ line 34 ~ Main ~ order", order);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   //Add To Cart
   const AddToCart = (product) => {
@@ -51,38 +72,26 @@ const Main = () => {
   useEffect(() => {
     localStorage.setItem("CartItems", JSON.stringify(cartItems));
   }, [cartItems]);
+
   // handle Filter By Size
+
   const handleSize = (e) => {
     let { value } = e.target;
 
     setSize(value);
-
-    //Search for Size Inside The Elements [xxl,m,s,xl,sm]
-    let newProducts = products.filter((p) => p.sizes.indexOf(value) !== -1);
-
-    setFillterSize(newProducts);
+    dispatch(filterbySize(value));
   };
 
   // handle Filter By Order
+
   const handleorder = (e) => {
     let { value } = e.target;
 
-    setOrder(value);
+    setOrder(value); // xl,md,sm
 
-    let productsClone = [...products];
+    //copy clone from the products arr to adjust
 
-    //Sorting By Order
-    let newOrder = productsClone.sort(function (a, b) {
-      if (value === "Lowest") {
-        return a.price - b.price;
-      } else if (value === "Highest") {
-        return b.price - a.price;
-      } else {
-        return a.id < b.id ? 1 : -1; // Sorting Element By Id [String]
-      }
-    });
-
-    setProducts(newOrder);
+    dispatch(Allproducts(value));
   };
 
   return (
@@ -90,26 +99,26 @@ const Main = () => {
       <div className="wrapper">
         <div className="filter">
           <Filter
-            Proucts={data}
-            fillterSize={fillterSize}
+            Proucts={products}
             handleSize={handleSize}
+            Bysize={Bysize}
             handleorder={handleorder}
-            size={size}
-            order={order}
+            size={size} //string for option
+            order={order} //string  for option
           />
         </div>
 
         <div className="products">
           {size === "ALL" ? (
             <>
-              {products.map((product) => (
+              {products?.map((product) => (
                 <Proucts product={product} AddToCart={AddToCart} />
               ))}
             </>
           ) : (
             <>
-              {fillterSize.map((product) => (
-                <Proucts product={product} />
+              {Bysize?.map((product) => (
+                <Proucts product={product} AddToCart={AddToCart} />
               ))}
             </>
           )}
