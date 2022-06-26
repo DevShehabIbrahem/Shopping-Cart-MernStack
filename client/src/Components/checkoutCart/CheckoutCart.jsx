@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../Input/Input";
+import CartModal from "./CartModal";
 
-const CheckoutCart = ({ show, handleSubmit, HandleChange, setShow }) => {
+const CheckoutCart = ({
+  show,
+  handleSubmit,
+  HandleChange,
+  setShow,
+  values,
+  isOpen,
+  closeModal,
+  openModal,
+  TotalPrice,
+}) => {
   return (
     <div>
       {show && (
@@ -31,10 +42,18 @@ const CheckoutCart = ({ show, handleSubmit, HandleChange, setShow }) => {
               />
             </div>
 
-            <button type="submit">CheckOut</button>
+            <button type="submit" onClick={() => openModal(values)}>
+              CheckOut
+            </button>
           </form>
         </div>
       )}
+      <CartModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        values={values}
+        TotalPrice={TotalPrice}
+      />
     </div>
   );
 };

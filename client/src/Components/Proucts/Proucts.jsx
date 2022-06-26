@@ -3,6 +3,7 @@ import "../../css/Proucts/products.css";
 import ProductModal from "../Product Modal/ProductModal";
 
 const Proucts = ({ product, AddToCart }) => {
+  console.log("🚀 ~ file: Proucts.jsx ~ line 6 ~ Proucts ~ product", product);
   const [isOpen, setIsOpen] = useState("");
 
   const openModal = (products) => {
@@ -38,7 +39,6 @@ const Proucts = ({ product, AddToCart }) => {
       {/** Modal PopUP**/}
       {isOpen && (
         <ProductModal
-          isOpen={isOpen}
           closeModal={closeModal}
           openModal={openModal}
           product={product}

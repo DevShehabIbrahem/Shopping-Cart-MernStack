@@ -5,6 +5,16 @@ import CheckoutCart from "../checkoutCart/CheckoutCart";
 const Cart = ({ cartItems, DeleteItem }) => {
   const [show, setShow] = useState(false);
   const [values, setValues] = useState({ name: "", email: "" });
+  const [isOpen, setIsOpen] = useState("");
+
+  const openModal = (data) => {
+    console.log("🚀 ~ file: Cart.jsx ~ line 11 ~ openModal ~ data", data);
+    setIsOpen(data);
+  };
+
+  const closeModal = () => {
+    setIsOpen("");
+  };
 
   //culc the Total price
   const TotalPrice = cartItems.reduce((acc, currnt) => acc + currnt.price, 0);
@@ -19,12 +29,13 @@ const Cart = ({ cartItems, DeleteItem }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    // openModal();
     //push the value inside the arr After clicked sbmit
     const order = { name: values.name, email: values.email };
 
     setValues(order);
   };
+
   return (
     <>
       <div className="cart-wrapper">
@@ -53,7 +64,12 @@ const Cart = ({ cartItems, DeleteItem }) => {
         handleSubmit={handleSubmit}
         HandleChange={HandleChange}
         show={show}
+        values={values}
         setShow={setShow}
+        isOpen={isOpen}
+        closeModal={closeModal}
+        openModal={openModal}
+        TotalPrice={TotalPrice}
       />
     </>
   );
